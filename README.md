@@ -1,59 +1,280 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📦 Sistema de Gestión de Inventario
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistema moderno y flexible de gestión de inventario desarrollado con Laravel 12 y Filament 5.
 
-## About Laravel
+Perfecto para gestionar cualquier tipo de productos: tiendas retail, almacenes, equipamiento, suministros o cualquier negocio que necesite control de stock.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Características
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- 📦 **Gestión Universal de Productos**: Administra productos con operaciones CRUD completas, control de precios, costos y niveles de stock
+- 📊 **Dashboard Interactivo**: Estadísticas y tendencias en tiempo real con visualizaciones de Chart.js
+  - Tarjetas de resumen con tendencias de últimos 7 días
+  - Gráfico de barras: Top 10 productos con mayor stock
+  - Gráfico circular: Distribución de productos por categoría
+- 🏷️ **Categorías Personalizables**: Sistema flexible de categorías adaptable a cualquier industria
+- 🚚 **Gestión de Proveedores**: Rastrea y administra tus proveedores con información de contacto completa
+- 📈 **Seguimiento de Movimientos**: 
+  - Historial completo de entradas, salidas y ajustes de inventario
+  - Actualización automática de stock mediante observadores
+  - Trazabilidad completa con referencias y notas
+- 🎨 **Tema Moderno**: Diseño profesional con colores ámbar personalizables
+- 📱 **Diseño Responsive**: Funciona perfectamente en escritorio, tablet y móvil
+- 🔄 **Actualización en Tiempo Real**: Stock actualizado automáticamente con cada movimiento
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🎯 Casos de Uso
 
-## Learning Laravel
+Este sistema es perfecto para:
+- 🏪 **Tiendas Retail**: Gestiona el inventario de productos para negocios
+- 📦 **Almacenes**: Controla niveles y movimientos de stock
+- 🏢 **Oficinas**: Rastrea equipamiento y suministros
+- 🔧 **Talleres**: Administra herramientas y materiales
+- 💊 **Farmacias**: Control de inventario de medicamentos
+- 🍽️ **Restaurantes**: Gestión de ingredientes y suministros
+- 🖥️ **Tiendas de Tecnología**: Componentes de hardware y accesorios
+- ¡Y cualquier negocio que necesite control de inventario!
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 🛠️ Stack Tecnológico
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Backend**: Laravel 12
+- **Panel Admin**: Filament 5
+- **Base de Datos**: MySQL
+- **Frontend**: Tailwind CSS
+- **Gráficos**: Chart.js
+- **Iconos**: Heroicons
+- **Build Tool**: Vite
 
-## Laravel Sponsors
+## 📋 Requisitos
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- PHP 8.2 o superior
+- Composer
+- Node.js y NPM
+- MySQL 8.0 o superior
+- Servidor web (Apache/Nginx) o XAMPP
 
-### Premium Partners
+## 🚀 Instalación
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+1. Clona el repositorio
+```bash
+git clone https://github.com/FedeCtr/sistema-gestion-inventario.git
+cd sistema-gestion-inventario
+```
 
-## Contributing
+2. Instala las dependencias de PHP
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3. Instala las dependencias de NPM
+```bash
+npm install
+```
 
-## Code of Conduct
+4. Copia el archivo de entorno
+```bash
+cp .env.example .env
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. Genera la clave de la aplicación
+```bash
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+6. Configura tu base de datos en `.env`
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=inventario_db
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+7. Ejecuta las migraciones y seeders
+```bash
+php artisan migrate --seed
+```
 
-## License
+**Nota**: Los seeders crearán datos de ejemplo:
+- 10 categorías (Motherboards, Processors, Graphics Cards, etc.)
+- 50 productos con datos aleatorios
+- Proveedores asociados
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+8. Compila los assets
+```bash
+npm run build
+# o para desarrollo:
+npm run dev
+```
+
+9. Inicia el servidor de desarrollo
+```bash
+php artisan serve
+# o usa XAMPP y accede desde http://localhost/inventory_system/public
+```
+
+10. Accede al panel de administración en `http://localhost:8000/admin`
+
+**Nota**: Deberás crear un usuario administrador con:
+```bash
+php artisan make:filament-user
+```
+
+## 🎨 Personalización
+
+### Colores del Tema
+El sistema usa un tema con colores ámbar como color primario. Puedes modificar los colores en:
+```php
+// app/Providers/Filament/AdminPanelProvider.php
+->colors([
+    'primary' => Color::Amber,
+])
+```
+
+### Fuente Personalizada
+El sistema usa la fuente **Poppins**. Puedes cambiarla en:
+```php
+// app/Providers/Filament/AdminPanelProvider.php
+->font('Poppins')
+```
+
+### Widgets del Dashboard
+Los widgets del dashboard se pueden personalizar en:
+```
+app/Filament/Widgets/
+├── CardsWidgets.php        # Tarjetas de resumen
+├── ChartBarWidget.php      # Gráfico de barras (Top 10 productos)
+└── ChartPieWidget.php      # Gráfico circular (Categorías)
+```
+
+### Iconos de Navegación
+Los iconos se configuran en cada recurso usando Heroicons:
+```php
+protected static string|BackedEnum|null $navigationIcon = Heroicon::Squares2x2;
+```
+
+## 📊 Módulos Principales
+
+### Productos
+- CRUD completo de productos
+- SKU único para identificación
+- Control de precio y costo
+- Stock actual y mínimo
+- Descripción detallada
+- Relación con categoría y proveedor
+- Campos con validación y selectores searchable
+
+### Categorías
+- Organización simple y eficiente
+- Gráfico circular en dashboard
+- Estadísticas por categoría
+- Relación one-to-many con productos
+
+### Proveedores
+- Información completa de contacto (email, teléfono, dirección)
+- Relación con productos suministrados
+- Gestión centralizada
+
+### Movimientos de Stock
+- **Tipos de movimiento**:
+  - `in`: Entrada de stock (suma)
+  - `out`: Salida de stock (resta)
+  - `adjust`: Ajuste directo al valor especificado
+- Cantidad y referencia
+- Notas adicionales
+- Usuario responsable
+- **Actualización automática**: El stock se actualiza mediante un Observer al crear movimientos
+- Validación de stock suficiente en salidas
+
+## 🔧 Estructura del Proyecto
+
+```
+app/
+├── Filament/
+│   ├── Resources/
+│   │   ├── Categories/      # Recurso de categorías
+│   │   ├── Products/        # Recurso de productos
+│   │   ├── StockMovements/  # Recurso de movimientos
+│   │   └── Suppliers/       # Recurso de proveedores
+│   └── Widgets/             # Widgets del dashboard
+├── Models/
+│   ├── Category.php
+│   ├── Product.php
+│   ├── StockMovement.php
+│   └── Supplier.php
+└── Observers/
+    └── StockMovementObserver.php  # Lógica de actualización automática
+
+database/
+├── factories/               # Factories para datos de prueba
+├── migrations/              # Migraciones de base de datos
+└── seeders/                # Seeders con datos de ejemplo
+```
+
+## 🔐 Observadores (Observers)
+
+El sistema utiliza un **Observer** para actualizar automáticamente el stock:
+
+### StockMovementObserver
+- **Evento**: `created` en StockMovement
+- **Funcionalidad**:
+  - Usa transacciones de base de datos
+  - Lock pessimista para evitar race conditions
+  - Validación de stock suficiente en salidas
+  - Actualización automática del modelo Product
+
+```php
+// Ejemplo de uso
+StockMovement::create([
+    'product_id' => 1,
+    'type' => 'in',
+    'quantity' => 10,
+    'reference' => 'PO-001',
+    'user_id' => 1,
+]);
+// El stock del producto se actualiza automáticamente
+```
+
+## 🚦 Roadmap
+
+- [ ] Sistema de roles y permisos con Spatie
+- [ ] Reportes PDF exportables
+- [ ] Códigos de barras / QR para productos
+- [ ] Alertas automáticas de stock mínimo
+- [ ] API REST para integraciones externas
+- [ ] Soporte multi-almacén/sucursales
+- [ ] Historial de cambios de precios
+- [ ] Sistema de notificaciones por email
+- [ ] Exportación a Excel/CSV
+- [ ] Importación masiva de productos
+- [ ] Dashboard personalizable por usuario
+- [ ] Auditoría completa de cambios
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas. Por favor:
+
+1. Haz fork del proyecto
+2. Crea una rama para tu característica (`git checkout -b feature/nueva-caracteristica`)
+3. Commit tus cambios (`git commit -m 'Agrega nueva característica'`)
+4. Push a la rama (`git push origin feature/nueva-caracteristica`)
+5. Abre un Pull Request
+
+## 📝 Licencia
+
+Este proyecto está bajo la licencia [MIT](LICENSE).
+
+## 👨‍💻 Autor
+
+FedeCtr - [@FedeCtr](https://github.com/FedeCtr)
+
+## ⭐ Apoya el Proyecto
+
+Si este proyecto te fue útil, ¡dale una ⭐️!
+
+## 📧 Contacto
+
+¿Preguntas o sugerencias? Abre un [issue](https://github.com/FedeCtr/sistema-gestion-inventario/issues).
+
+---
+
+**Hecho con ❤️ usando Laravel 12 y Filament 5**
