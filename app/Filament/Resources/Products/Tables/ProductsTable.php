@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\Products\Tables;
 
+use App\Filament\Exports\ProductExporter;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ExportAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -59,6 +61,11 @@ class ProductsTable
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
+            ])
+            ->headerActions([
+                ExportAction::make()
+                    ->label('Export')
+                    ->exporter(ProductExporter::class),
             ]);
     }
 }
