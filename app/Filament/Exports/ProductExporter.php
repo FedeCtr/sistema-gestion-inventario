@@ -27,8 +27,8 @@ class ProductExporter extends Exporter
             ExportColumn::make('min_stock'),
             ExportColumn::make('category_id'),
             ExportColumn::make('supplier_id'),
-            ExportColumn::make('created_at'),
-            ExportColumn::make('updated_at'),
+/*             ExportColumn::make('created_at'),
+            ExportColumn::make('updated_at'), */
         ];
     }
 
