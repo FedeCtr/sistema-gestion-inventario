@@ -12,6 +12,8 @@ use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class CardsWidgets extends StatsOverviewWidget
 {
+    protected ?string $pollingInterval = null;
+
     protected function getStats(): array
     {
         $chartData = collect(range(6,0))
