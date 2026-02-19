@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
+use CraftForge\FilamentLanguageSwitcher\FilamentLanguageSwitcherPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -11,6 +12,7 @@ use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use Filament\View\PanelsRenderHook;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -34,7 +36,6 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
-            ->vitetheme('resources/css/filament/admin/theme.css')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
@@ -60,6 +61,13 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->plugins([
+                FilamentLanguageSwitcherPlugin::make()
+                    ->locales([
+                        ['code' => 'en'],
+                        ['code' => 'es'],
+                        ['code' => 'fr'],
+                    ])
+                    ->renderHook(PanelsRenderHook::USER_MENU_BEFORE),
                 FilamentShieldPlugin::make(),
             ]);
     }
