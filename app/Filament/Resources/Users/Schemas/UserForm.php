@@ -15,20 +15,20 @@ class UserForm
     {
         return $schema
             ->components([
-                Section::make('User Information')
+                Section::make(__('User information'))
                     ->schema([
                         TextInput::make('name')
-                            ->label('Name')
+                            ->label(__('Name'))
                             ->maxLength(100)
                             ->required(),
                         TextInput::make('email')
-                            ->label('E-mail')
+                            ->label(__('E-mail'))
                             ->email()
                             ->required()
                             ->unique(User::class, ignoreRecord: true)
                             ->maxLength(255),
                         TextInput::make('password')
-                            ->label('Password')
+                            ->label(__('Password'))
                             ->password()
                             ->required(fn (string $operation): bool => $operation === 'create')
                             ->dehydrated(fn ($state): bool => filled($state))
@@ -41,7 +41,7 @@ class UserForm
                 Section::make('Roles and Permissions')
                     ->schema([
                         Select::make('roles')
-                            ->label('Roles')
+                            ->label(__('Roles'))
                             ->multiple()
                             ->relationship('roles', 'name')
                             ->searchable()

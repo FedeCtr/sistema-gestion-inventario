@@ -24,6 +24,21 @@ class StockMovementResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'reference';
 
+    public static function getNavigationLabel(): string
+    {
+        return __('Stock Movements');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('Stock Movement');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('Stock Movements');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return StockMovementForm::configure($schema);

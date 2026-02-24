@@ -27,20 +27,20 @@ class CardsWidgets extends StatsOverviewWidget
             Stat::make('Products', Product::query()->count()),
             Stat::make('Suppliers', Supplier::query()->count()) */
 
-            Stat::make('Categories', Category::query()->count())
-                ->description('Total Categories')
+            Stat::make(__('Categories'), Category::query()->count())
+                ->description(__('Total Categories'))
                 ->descriptionIcon('heroicon-m-tag', IconPosition::Before)
                 ->chart($chartData)
                 ->color('primary'),
 
-            Stat::make('Products', Product::query()->count())
-                ->description('Total available Products')
+            Stat::make(__('Products'), Product::query()->count())
+                ->description(__('Total available Products'))
                 ->descriptionIcon('heroicon-m-squares-2x2', IconPosition::Before)
                 ->chart([7, 2, 10, 3, 14, 4, 17])
                 ->color('success'),
 
-            Stat::make('Suppliers', Supplier::query()->count())
-                ->description('Total Suppliers')
+            Stat::make(__('Suppliers'), Supplier::query()->count())
+                ->description(__('Total Suppliers'))
                 ->descriptionIcon('heroicon-m-truck', IconPosition::Before)
                 ->chart([3, 5, 2, 8, 6, 4, 9])
                 ->color('danger'),

@@ -7,8 +7,12 @@ use Filament\Widgets\ChartWidget;
 
 class ChartPieWidget extends ChartWidget
 {
-    protected ?string $heading = 'Category Chart - Pie';
     protected ?string $maxHeight = '250px';
+
+    public function getHeading(): ?string
+    {
+        return __('Category Chart - Pie');
+    }
 
     protected function getData(): array
     {
@@ -19,7 +23,7 @@ class ChartPieWidget extends ChartWidget
         return [
             'datasets' => [
                 [
-                    'label' => 'Quantity of products',
+                    'label' => __('Quantity of products'),
                     'data' => $data,
                     'backgroundColor' => [
                         '#f87171', // Red 400

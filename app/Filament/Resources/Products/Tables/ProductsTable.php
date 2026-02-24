@@ -18,34 +18,41 @@ class ProductsTable
         return $table
             ->columns([
                 TextColumn::make('sku')
-                    ->label('SKU')
+                    ->label(__('SKU'))
                     ->searchable(),
                 TextColumn::make('name')
+                    ->label(__('Name'))
                     ->searchable(),
                 TextColumn::make('price')
+                    ->label(__('Price'))
                     ->money()
                     ->sortable(),
                 TextColumn::make('cost')
+                    ->label(__('Cost'))
                     ->money()
                     ->sortable(),
                 TextColumn::make('stock')
+                    ->label(__('Stock'))
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('min_stock')
+                    ->label(__('Min Stock'))
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('category.name')
-                    ->label('Category')
+                    ->label(__('Category'))
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('supplier.name')
-                    ->label('Supplier')
+                    ->label(__('Supplier'))
                     ->sortable(),
                 TextColumn::make('created_at')
+                    ->label(__('Created At'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label(__('Updated At'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

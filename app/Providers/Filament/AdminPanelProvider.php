@@ -64,9 +64,9 @@ class AdminPanelProvider extends PanelProvider
             ->plugins([
                 FilamentLanguageSwitcherPlugin::make()
                     ->locales([
-                        ['code' => 'en'],
-                        ['code' => 'es'],
-                        ['code' => 'fr'],
+                        ['code' => 'en', 'label' => 'English'],
+                        ['code' => 'es', 'label' => 'Español'],
+                        ['code' => 'fr', 'label' => 'Français'],
                     ])
                     ->renderHook(PanelsRenderHook::USER_MENU_AFTER),
                 FilamentShieldPlugin::make(),

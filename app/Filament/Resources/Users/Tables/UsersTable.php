@@ -16,12 +16,13 @@ class UsersTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label(__('Name'))
                     ->searchable(),
                 TextColumn::make('email')
-                    ->label('Email address')
+                    ->label(__('Email address'))
                     ->searchable(),
                 TextColumn::make('roles.name')
-                    ->label('Roles')
+                    ->label(__('Roles'))
                     ->badge()
                     ->getStateUsing(fn($record) => $record->roles->pluck('name')->filter()->join(', '))
                     ->color(fn($record): string => match (strtolower($record->roles->first()?->name ?? '')) {
@@ -30,12 +31,14 @@ class UsersTable
                         'super_admin' => 'danger',
                         default => 'gray',
                     })
-                    ->placeholder('No roles assigned'),
+                    ->placeholder(__('No roles assigned')),
                 TextColumn::make('created_at')
+                    ->label(__('Created At'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label(__('Updated At'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

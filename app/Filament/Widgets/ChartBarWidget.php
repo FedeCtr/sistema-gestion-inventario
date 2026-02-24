@@ -7,9 +7,12 @@ use Filament\Widgets\ChartWidget;
 
 class ChartBarWidget extends ChartWidget
 {
-    protected ?string $heading = 'Top 10 products with the most stock';
-   
     protected ?string $maxHeight = '250px';
+
+    public function getHeading(): ?string
+    {
+        return __('Top 10 products with the most stock');
+    }
 
     protected function getData(): array
     {
@@ -18,7 +21,7 @@ class ChartBarWidget extends ChartWidget
         return [
             'datasets' => [
                 [
-                    'label' => 'Current Stock',
+                    'label' => __('Current Stock'),
                     'data' => $toProducts->pluck('stock')->toArray(),
                     'backgroundColor' => '#f59e0b',
                     'borderColor' => '#d97706', // Ámbar 600

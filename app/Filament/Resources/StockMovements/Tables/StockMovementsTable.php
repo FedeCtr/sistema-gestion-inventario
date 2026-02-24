@@ -16,25 +16,31 @@ class StockMovementsTable
         return $table
             ->columns([
                 TextColumn::make('product.name')
-                    ->label('Product Name')
+                    ->label(__('Product Name'))
                     ->sortable(),
                 TextColumn::make('type')
+                    ->label(__('Type'))
                     ->badge(),
                 TextColumn::make('quantity')
+                    ->label(__('Quantity'))
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('reference')
+                    ->label(__('Reference'))
                     ->searchable(),
                 TextColumn::make('user.name')
-                    ->label('User Name')
+                    ->label(__('User Name'))
                     ->sortable(),
                 TextColumn::make('notes')
+                    ->label(__('Notes'))
                     ->searchable(),
                 TextColumn::make('created_at')
+                    ->label(__('Created At'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label(__('Updated At'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

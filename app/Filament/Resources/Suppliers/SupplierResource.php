@@ -24,6 +24,21 @@ class SupplierResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
+    public static function getNavigationLabel(): string
+    {
+        return __('Suppliers');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('Supplier');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('Suppliers');
+    }
+
     public static function form(Schema $schema): Schema
     {
         return SupplierForm::configure($schema);
